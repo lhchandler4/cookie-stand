@@ -9,7 +9,7 @@ var pikeStore = {
   avgSalePerHour: 6.3,
   custAvg: [],
   cookies: [],
-  totalCookies: [],
+  totalCookies: 0,
   custCalc: function() {
     for (var i = 0; i < hours.length; i++){
       //generate a random val between min and max
@@ -27,16 +27,16 @@ var pikeStore = {
     }
   },
   totalCalc: function() {
-    var sum = 0;
     for (var k = 0; k < this.cookies.length; k++) {
-      sum += this.cookies[k];
+      this.totalCookies += this.cookies[k];
     }
-    console.log(sum);
+    console.log(this.totalCookies);
   }
 };
 
 pikeStore.custCalc();
 pikeStore.cookieCalc();
+pikeStore.totalCalc();
 
 var airportStore = {
   location: 'SeaTac Airport',
@@ -45,7 +45,7 @@ var airportStore = {
   avgSalePerHour: 1.2,
   custAvg: [],
   cookies: [],
-  totalCookies: [],
+  totalCookies: 0,
   custCalc: function() {
     for (var i = 0; i < hours.length; i++){
       //generate a random val between min and max
@@ -63,16 +63,16 @@ var airportStore = {
     }
   },
   totalCalc: function() {
-    var sum = 0;
     for (var k = 0; k < this.cookies.length; k++) {
-      sum += this.cookies[k];
+      this.totalCookies += this.cookies[k];
     }
-    console.log(sum);
+    console.log(this.totalCookies);
   }
 };
 
 airportStore.custCalc();
 airportStore.cookieCalc();
+airportStore.totalCalc();
 
 var centerStore = {
   location: 'Seattle Center',
@@ -81,7 +81,7 @@ var centerStore = {
   avgSalePerHour: 3.7,
   custAvg: [],
   cookies: [],
-  totalCookies: [],
+  totalCookies: 0,
   custCalc: function() {
     for (var i = 0; i < hours.length; i++){
       //generate a random val between min and max
@@ -99,16 +99,16 @@ var centerStore = {
     }
   },
   totalCalc: function() {
-    var sum = 0;
     for (var k = 0; k < this.cookies.length; k++) {
-      sum += this.cookies[k];
+      this.totalCookies += this.cookies[k];
     }
-    console.log(sum);
+    console.log(this.totalCookies + 'Capitol Hill Total');
   }
 };
 
 centerStore.custCalc();
 centerStore.cookieCalc();
+centerStore.totalCalc();
 
 var hillStore = {
   location: 'Capitol Hill',
@@ -117,7 +117,7 @@ var hillStore = {
   avgSalePerHour: 2.3,
   custAvg: [],
   cookies: [],
-  totalCookies: [],
+  totalCookies: 0,
   custCalc: function() {
     for (var i = 0; i < hours.length; i++){
       //generate a random val between min and max
@@ -135,16 +135,16 @@ var hillStore = {
     }
   },
   totalCalc: function() {
-    var sum = 0;
     for (var k = 0; k < this.cookies.length; k++) {
-      sum += this.cookies[k];
+      this.totalCookies += this.cookies[k];
     }
-    console.log(sum);
+    console.log(this.totalCookies);
   }
 };
 
 hillStore.custCalc();
 hillStore.cookieCalc();
+hillStore.totalCalc();
 
 var alkiStore = {
   location: 'Alki',
@@ -153,7 +153,7 @@ var alkiStore = {
   avgSalePerHour: 4.6,
   custAvg: [],
   cookies: [],
-  totalCookies: [],
+  totalCookies: 0,
   custCalc: function() {
     for (var i = 0; i < hours.length; i++){
       //generate a random val between min and max
@@ -171,16 +171,16 @@ var alkiStore = {
     }
   },
   totalCalc: function() {
-    var sum = 0;
     for (var k = 0; k < this.cookies.length; k++) {
-      sum += this.cookies[k];
+      this.totalCookies += this.cookies[k];
     }
-    console.log(sum);
+    console.log(this.totalCookies);
   }
 };
 
 alkiStore.custCalc();
 alkiStore.cookieCalc();
+alkiStore.totalCalc();
 
 var ulEl = document.getElementById('pike');
 console.log(ulEl);
@@ -220,4 +220,34 @@ for(var i = 0; i < hours.length; i++) {
   var liEl = document.createElement('li');
   liEl.textContent = hours[i] + ': ' + alkiStore.cookies[i] + ' cookies';
   ulEl.appendChild(liEl);
-}
+} 
+
+ulEl = document.getElementById('pike');
+liEl = document.createElement('li');
+liEl.textContent = 'Total: ' + pikeStore.totalCookies;
+console.log(ulEl);
+ulEl.appendChild(liEl);
+
+ulEl = document.getElementById('airport');
+liEl = document.createElement('li');
+liEl.textContent = 'Total: ' + airportStore.totalCookies;
+console.log(liEl);
+ulEl.appendChild(liEl);
+
+ulEl = document.getElementById('center');
+liEl = document.createElement('li');
+liEl.textContent = 'Total: ' + centerStore.totalCookies;
+console.log(liEl);
+ulEl.appendChild(liEl);
+
+ulEl = document.getElementById('hill');
+liEl = document.createElement('li');
+liEl.textContent = 'Total: ' + hillStore.totalCookies;
+console.log(liEl);
+ulEl.appendChild(liEl);
+
+ulEl = document.getElementById('alki');
+liEl = document.createElement('li');
+liEl.textContent = 'Total: ' + alkiStore.totalCookies;
+console.log(liEl);
+ulEl.appendChild(liEl);
