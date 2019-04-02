@@ -190,37 +190,37 @@ for(var i = 0; i < hours.length; i++) {
   ulEl.appendChild(liEl);
 }
 
-var ulEl = document.getElementById('airport');
+ulEl = document.getElementById('airport');
 console.log(ulEl);
-for(var i = 0; i < hours.length; i++) {
-  var liEl = document.createElement('li');
-  liEl.textContent = hours[i] + ': ' + airportStore.cookies[i] + ' cookies';
+for(var j = 0; j < hours.length; j++) {
+  liEl = document.createElement('li');
+  liEl.textContent = hours[j] + ': ' + airportStore.cookies[j] + ' cookies';
   ulEl.appendChild(liEl);
 }
 
-var ulEl = document.getElementById('center');
+ulEl = document.getElementById('center');
 console.log(ulEl);
-for(var i = 0; i < hours.length; i++) {
-  var liEl = document.createElement('li');
-  liEl.textContent = hours[i] + ': ' + centerStore.cookies[i] + ' cookies';
+for(var k = 0; k < hours.length; k++) {
+  liEl = document.createElement('li');
+  liEl.textContent = hours[k] + ': ' + centerStore.cookies[k] + ' cookies';
   ulEl.appendChild(liEl);
 }
 
-var ulEl = document.getElementById('hill');
+ulEl = document.getElementById('hill');
 console.log(ulEl);
-for(var i = 0; i < hours.length; i++) {
-  var liEl = document.createElement('li');
-  liEl.textContent = hours[i] + ': ' + hillStore.cookies[i] + ' cookies';
+for(var l = 0; l < hours.length; l++) {
+  liEl = document.createElement('li');
+  liEl.textContent = hours[l] + ': ' + hillStore.cookies[l] + ' cookies';
   ulEl.appendChild(liEl);
 }
 
-var ulEl = document.getElementById('alki');
+ulEl = document.getElementById('alki');
 console.log(ulEl);
-for(var i = 0; i < hours.length; i++) {
-  var liEl = document.createElement('li');
-  liEl.textContent = hours[i] + ': ' + alkiStore.cookies[i] + ' cookies';
+for(var m = 0; m < hours.length; m++) {
+  liEl = document.createElement('li');
+  liEl.textContent = hours[m] + ': ' + alkiStore.cookies[m] + ' cookies';
   ulEl.appendChild(liEl);
-} 
+}
 
 ulEl = document.getElementById('pike');
 liEl = document.createElement('li');
