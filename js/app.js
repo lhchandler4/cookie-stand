@@ -33,9 +33,9 @@ var pikeStore = {
     }
     console.log(sum);
   }
-  // render: function() {}
-  //take data and put into the DOM
 };
+
+pikeStore.custCalc();
 
 var airportStore = {
   location: 'SeaTac Airport',
@@ -61,9 +61,13 @@ var airportStore = {
       this.cookies[j] = oneHourCookies;
     }
   },
-  // cookieCalc: function() {},
-  // render: function() {}
-  //take data and put into the DOM
+  totalCalc: function() {
+    var sum = 0;
+    for (var k = 0; k < this.cookies.length; k++) {
+      sum += this.cookies[k];
+    }
+    console.log(sum);
+  }
 };
 
 var centerStore = {
@@ -90,9 +94,13 @@ var centerStore = {
       this.cookies[j] = oneHourCookies;
     }
   },
-  // cookieCalc: function() {},
-  // render: function() {}
-  //take data and put into the DOM
+  totalCalc: function() {
+    var sum = 0;
+    for (var k = 0; k < this.cookies.length; k++) {
+      sum += this.cookies[k];
+    }
+    console.log(sum);
+  }
 };
 
 var hillStore = {
@@ -119,9 +127,13 @@ var hillStore = {
       this.cookies[j] = oneHourCookies;
     }
   },
-  // cookieCalc: function() {},
-  // render: function() {}
-  //take data and put into the DOM
+  totalCalc: function() {
+    var sum = 0;
+    for (var k = 0; k < this.cookies.length; k++) {
+      sum += this.cookies[k];
+    }
+    console.log(sum);
+  }
 };
 
 var alkiStore = {
@@ -148,8 +160,19 @@ var alkiStore = {
       this.cookies[j] = oneHourCookies;
     }
   },
-  // cookieCalc: function() {},
-  // render: function() {}
-  //take data and put into the DOM
+  totalCalc: function() {
+    var sum = 0;
+    for (var k = 0; k < this.cookies.length; k++) {
+      sum += this.cookies[k];
+    }
+    console.log(sum);
+  }
 };
 
+var ulEl = document.getElementById('pike');
+console.log(ulEl);
+for(var i = 0; i < hours.length; i++) {
+  var liEl = document.createElement('li');
+  liEl.textContent = hours[i];
+  ulEl.appendChild(liEl);
+}
