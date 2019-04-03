@@ -99,7 +99,7 @@ function makeFooterRow() {
   var thEl = document.createElement('th');
   thEl.textContent = 'Hour Totals';
   trEl.appendChild(thEl);
-  for (var i = 0; i <= hours.length; i++) {
+  for (var i = 0; i < hours.length; i++) {
     var totalPerHour = 0;
     for (var k = 0; k < allStores.length; k++) {
       console.log(allStores[k].cookies[i]);
@@ -109,20 +109,20 @@ function makeFooterRow() {
     trEl.appendChild(thEl);
   }
   for (var m = 0; m < hours.length; m++) {
-    thEl = document.createElement('th');
+    thEl = document.createElement('td');
     thEl.textContent = hourTotal[m];
     console.log('Hour Total',thEl.textContent);
     trEl.appendChild(thEl);
   }
-  for (var n = 0; n < totalPerHour.length; n++) {
-    var finalTotal = 0;
-    totalPerHour += hourTotal[n];
+  //Final Total
+  var finalTotal = 0;
+  for (var n = 0; n < hourTotal.length; n++) {
+    finalTotal += hourTotal[n];
     console.log('final total', finalTotal);
-    trEl = document.createElement('tr');
-    thEl = document.createElement('th');
-    thEl.textContent = finalTotal;
-    trEl.appendChild(thEl);
   }
+  thEl = document.createElement('th');
+  thEl.textContent = finalTotal;
+  trEl.appendChild(thEl);
   storeTable.appendChild(trEl);
 }
 
