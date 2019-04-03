@@ -5,3 +5,30 @@ body {
 ul {
     column-count: 3;
 }
+
+#stores {
+  border-color: black;
+}
+
+table, th, td {
+  border: 1px solid black;
+  background: lightblue;
+  padding: 15px;
+  margin: 8px;
+}
+
+th {
+  font-weight: bold;
+  padding: 10px;
+  margin: 5px;
+}
+
+tr {
+  border-color: black;
+}
+
+h1 {
+  font-size: 40px;
+  font-weight: bold;
+  text-align: center;
+}
