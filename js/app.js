@@ -82,12 +82,12 @@ function makeaHeaderRow() {
   var thEl = document.createElement('th');
   thEl.textContent = 'Location';
   trEl.appendChild(thEl);
-  for (var i = 0; i < hours.length; i++) {
+  for (var i = 0; i <= hours.length; i++) {
     thEl = document.createElement('th');
     thEl.textContent = hours[i];
     trEl.appendChild(thEl);
   }
-  thEl.textContent = 'Daily Location Totals';
+  thEl.textContent = 'Daily Totals';
   trEl.appendChild(thEl);
   storeTable.appendChild(trEl);
 }
