@@ -14,6 +14,26 @@
   
   <table id="stores"></table>
 
+  <form id="store-form">
+      <fieldset>
+        <legend>Add a New Location</legend>
+  
+        <label for="location">Location: </label>
+        <input name="location" type="text" size="20" placeholder="Location" required />
+  
+        <label for="minCustomerPerHour">Minimum # Customers/Hour: </label>
+        <input name="minCustomerPerHour" type="text" size="8" placeholder="Minimum" required/>
+
+        <label for="maxCustomerPerHour">Maximum # Customers/Hour: </label>
+        <input name="maxCustomerPerHour" type="text" size="8" placeholder="Maximum" required/>
+
+        <label for="avgSalePerHour">Average # Cookies/Customer: </label>
+        <input name="avgSalePerHour" type="text" size="8" placeholder="Average" required/>
+  
+        <button type="submit">Add the Location</button>
+      </fieldset>
+    </form>
+
   <script src="js/app.js"></script>
 </body>
 </html>
