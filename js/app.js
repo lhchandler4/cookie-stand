@@ -8,6 +8,8 @@ var allStores = [];
 var hourTotal = [];
 //Here is to access the table in the DOM
 var storeTable = document.getElementById('stores');
+//Here is the variable for the form
+var storeForm = document.getElementById('store-form');
 
 //A constructor for the store objects
 function Store(location, minCustomerPerHour, maxCustomerPerHour, avgSalePerHour){
@@ -32,9 +34,12 @@ function Store(location, minCustomerPerHour, maxCustomerPerHour, avgSalePerHour)
     // console.log(oneHourCookies);
   };
   this.totalCalc = function() {
+    let total = 0;
     for (var k = 0; k < this.cookies.length; k++) {
-      this.totalCookies += this.cookies[k];
+      // this.totalCookies += this.cookies[k];
+      total += this.cookies[k];
     }
+    return total;
   };
   allStores.push(this);
 }
@@ -53,7 +58,7 @@ function renderAllStores() {
   for (var i = 0; i < allStores.length; i++) {
     allStores[i].custCalc();
     allStores[i].cookieCalc();
-    allStores[i].totalCalc();
+    // allStores[i].totalCalc();
     allStores[i].render();
   }
 }
@@ -70,7 +75,8 @@ Store.prototype.render = function(){
     trEl.appendChild(tdEl);
   }
   tdEl = document.createElement('td');
-  tdEl.textContent = this.totalCookies;
+  // tdEl.textContent = this.totalCookies;
+  tdEl.textContent = this.totalCalc();
   trEl.appendChild(tdEl);
 
   storeTable.appendChild(trEl);
@@ -95,6 +101,7 @@ function makeaHeaderRow() {
 
 //Making the bottom row of totals
 function makeFooterRow() {
+  hourTotal = [];
   var trEl = document.createElement('tr');
   var thEl = document.createElement('th');
   thEl.textContent = 'Hour Totals';
@@ -103,7 +110,10 @@ function makeFooterRow() {
     var totalPerHour = 0;
     for (var k = 0; k < allStores.length; k++) {
       console.log(allStores[k].cookies[i]);
-      totalPerHour += allStores[k].cookies[i];
+      console.log('total/hour', totalPerHour);
+      //   totalPerHour += allStores[k].cookies[i];
+      // }
+      totalPerHour = allStores[k].cookies[i] + totalPerHour;
     }
     hourTotal.push(totalPerHour);
     trEl.appendChild(thEl);
@@ -129,4 +139,35 @@ function makeFooterRow() {
 makeaHeaderRow();
 renderAllStores();
 makeFooterRow();
+
+//Event Handler for new location submissions
+function handleNewLocationSubmit(event) {
+  console.log('log of event.target.location.value', event.target.location.value);
+  event.preventDefault();
+  var storeLocation = event.target.location.value;
+  var minCustomerPerHour = Number(event.target.minCustomerPerHour.value);
+  var maxCustomerPerHour = Number(event.target.maxCustomerPerHour.value);
+  var avgSalePerHour = Number(event.target.avgSalePerHour.value);
+  new Store (storeLocation, minCustomerPerHour, maxCustomerPerHour, avgSalePerHour);
+  allStores[allStores.length - 1].custCalc();
+  allStores[allStores.length - 1].cookieCalc();
+  event.target.location.value = null;
+  event.target.minCustomerPerHour.value = null;
+  event.target.maxCustomerPerHour.value = null;
+  event.target.avgSalePerHour.value = null;
+  
+  document.getElementById('stores').innerHTML = '';
+
+  makeaHeaderRow();
+  for (var i = 0; i < allStores.length; i++) {
+    allStores[i].render();
+  }
+  // renderAllStores();
+  makeFooterRow();
+
+}
+
+//Event listener for new location submissions
+storeForm.addEventListener('submit', handleNewLocationSubmit);
+
 
