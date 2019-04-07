@@ -155,7 +155,6 @@ function handleNewLocationSubmit(event) {
   event.target.minCustomerPerHour.value = null;
   event.target.maxCustomerPerHour.value = null;
   event.target.avgSalePerHour.value = null;
-  
   document.getElementById('stores').innerHTML = '';
 
   makeaHeaderRow();
