@@ -22,6 +22,9 @@ JS
 HTML
 Contributing
 Chai, TAs
+Sitepoint.com (speech bubble)
+W3Schools
+MDN
 
 Authors:
 Luke Chandler
