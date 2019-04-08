@@ -1,4 +1,4 @@
-body{
+body {
   font-family: Comic Sans MS;
   font-size: 16px;
   color: #3E4E50;
@@ -6,38 +6,38 @@ body{
   background-color: salmon;
 }
 
-header{
+header { 
   background-color: cornflowerblue;
   width:100%;
   color: black;
   font-family: Comic Sans MS;
 }
 
-h1{
+h1 {
   font-size: 40px;
 }
 
-header{
+header {
   text-align: center;
   margin-bottom:50px;
 }
 
-header img{
+header img {
   margin:20px;
   margin-top: -50px;
 }
 
-header ul{
+header ul {
   padding:20px;
 }
 
-header li{
+header li {
   display:inline;
   margin-left:15px;
   margin-right:15px;
 }
 
-header a:hover{
+header a:hover {
   color: rgb(192, 16, 16);
 }
 
@@ -46,44 +46,50 @@ a {
   text-decoration: none;
 }
 
-main{
+main {
   width:80%;
   margin-left: 10%;
 }
 
-h2{
+h2 {
   font-size:30px;
   font-family: Comic Sans MS;
   margin-top: 5px;
   margin-bottom: 5px;
 }
 
-h4{
+h4 {
   font-size:20px;
   font-family: Comic Sans MS;
   margin-top: 15px;
   margin-bottom: 5px;
 }
 
-section{
+section {
   margin-bottom:50px;
 }
 
-p{
+p {
   width:50%;
 }
 
-main img{
+main img {
   clip-path: circle(60%);
 }
 
-#imgs{
+#imgs {
   float:right;
   width:350px;
   margin-bottom:50px;
 }
 
-.cookie{
+#chinook {
+  width: 70px; 
+  margin-left: 47%;
+  clip-path: circle(60%);
+}
+
+.cookie {
   width: 167px;
 }
 
@@ -138,16 +144,16 @@ p.speech:after {
   margin-right: auto;
 }
 
-#cutter{
+#cutter {
   clip-path: circle(60%);
 }
 
-#frosted{
+#frosted {
   margin-top:20px;
   margin-bottom:30px;
 }
 
-#family{
+#family {
   width:345px;
 }
 
@@ -159,41 +165,41 @@ text-align: center;
   float: right;
 }
 
-#pics li{
+#pics li {
   display: inline;
 }
 
-#shirth2{
+#shirth2 {
   margin-left:50%;
   line-height: 35px;
 }
 
-#shirt{
+#shirt {
   float:left;
   margin-bottom: 20px;
 }
 
-#shirtp{
+#shirtp {
   margin-left:50%;
   width:50%;
 }
 
-footer{
+footer {
 background-color: cornflowerblue;
 }
 
-#buy{
+#buy {
   padding-top: 40px;
   padding-bottom:20px;
   text-align: center;
   font-family: Comic Sans MS;
 }
 
-.salmon{
+.salmon {
   width:200px;
 }
 
-button{
+button {
   padding-top: 10px;
   padding-bottom: 10px;
   padding-left: 10px;
